@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: development
+  application:
+    name: incompany-enrollment
+management:
+  endpoint:
+    health:
+      show-details: always
+  health:
+    defaults:
+      enabled: true
+    db:
+      enabled: true
+    probes:
+      enabled: true
+---
+spring:
+  config:
+    activate:
+      on-profile: development
+  data:
+    mongodb:
+      uri: mongodb://localhost/camp-gladiator-trainer-api
+server:
+  port: 9306
+  error:
+    whitelabel:
+      enabled: false
